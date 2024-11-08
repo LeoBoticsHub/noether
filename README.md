@@ -60,6 +60,10 @@ roslaunch noether_examples plane_slicer_rastering_generator_demo.launch mesh_fil
 
 
 ### Mesh Filtering Demo
+
+Note: the mesh filtering server `noether_filtering/CleanData` is not working, same error of the unresolved [issue 108](https://github.com/ros-industrial/noether/issues/108).
+
+
 The mesh filtering demo applies a bspline smoothing algorithm to a noisy mesh, run the following to see it in action:
 ```
 roslaunch noether_examples mesh_filtering_demo.launch
@@ -77,12 +81,15 @@ Custom mesh filter plugins can be added by inheriting from the `noether_filterin
 Runs an algorithm that identifies all the half edges that constiture the boundary
 - On a dummy *ply* mesh file
 ```
-roslaunch noether_examples halfedge_finder_demo.launch
+roslaunch noether_examples halfedge_edge_generator_demo.launch
 ```
 
 - On your own *ply* mesh file
 ```
-roslaunch noether_examples halfedge_finder_demo.launch mesh_file:=</absolute/path/to/my/mesh.stl>
+roslaunch noether_examples halfedge_edge_generator_demo.launch mesh_file:=</absolute/path/to/my/mesh.stl>
 ```
-
+e.g.:
+```
+roslaunch noether_examples halfedge_edge_generator_demo.launch mesh_file:=/home/intel_track_edge_ws/src/noether/noether_examples/data/raw_mesh.ply
+```
 
